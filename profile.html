@@ -12,7 +12,7 @@
     <!--Bootstrap CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!--Random CSS-->
-    <link rel="stylesheet" href="./profile.css">
+    <link rel="stylesheet" href="../static/CSS/profile.css">
 </head>
 <body>
     <div class="wrapper" id="wrapper">
@@ -148,6 +148,30 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="col-12">
+
+                                                    <div class="group-interests">
+                                                        <h5>Group Interests</h5>
+                                                        <div class="d-flex row mb-3" id="tags">
+                                                            <div class="tags" onclick="colorchange(this)" style="background-color: whitesmoke;">Social</div>
+                                                            <div class="tags" onclick="colorchange(this)" style="background-color: whitesmoke;">Technology</div>
+                                                            <div class="tags" onclick="colorchange(this)" style="background-color: whitesmoke;">Gaming</div>
+                                                            <div class="tags" onclick="colorchange(this)" style="background-color: whitesmoke;">Photography</div>
+                                                            <div class="tags" onclick="colorchange(this)" style="background-color: whitesmoke;">Dance</div>
+                                                            <div class="tags" onclick="colorchange(this)" style="background-color: whitesmoke;">Singing</div>
+                                                            <div class="tags" onclick="colorchange(this)" style="background-color: whitesmoke;">Coding</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="other col-12 mt-2">
+                                                        <div class="inputBox w100 ws100">
+                                                            <input type="text" id="new-tag" name="" required>
+                                                            <span>Any other interest</span>
+                                                            <div class="w50 ws100 add-button mt-3" onclick="newdiv(this)">
+                                                                Add
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 <div class="inputBox w100 col-12">
                                                     <input type="submit" name="" value="Save changes" >
                                                 </div>
@@ -213,6 +237,35 @@
                     x.style.display = "none";
                 }
             }
+        }
+
+        function colorchange(item) {
+            if(item.style.backgroundColor == "whitesmoke") {
+                item.style.backgroundColor = "#03a9f4";
+                item.style.color = "#fff";
+            }
+            else {
+                item.style.backgroundColor = "whitesmoke";
+                item.style.color ="#000";
+            }
+
+        }
+
+        function newdiv(item) {
+            var m = document.getElementById('new-tag')
+            if(m.value.length != 0){
+                var node = document.createElement("div");                 // Create a <li> node
+                var textnode = document.createTextNode(m.value);         // Create a text node
+                node.setAttribute("onclick", "colorchange(this)");
+                //node.onclick = 'colorchange(this)';
+                node.appendChild(textnode);                              // Append the text to <li>
+                node.classList.add('tags');
+                node.style.backgroundColor = "#03a9f4";
+                node.style.color = "white";
+                document.getElementById("tags").appendChild(node); 
+                m.value = "";
+            }
+           
         }
     </script>
 </body>

@@ -401,6 +401,124 @@ svg {
     background-color: #0d7eb3;
 }
 
+.contactForm .formBox div .inputBox, 
+.other{
+    position: relative;
+    margin: 0 0 35px 0;
+}
+
+.contactForm .formBox div .inputBox.w50, .w50{
+    width: 47%;
+}
+
+.contactForm .formBox div .inputBox.w70{
+    width: 72%;
+}
+
+.contactForm .formBox div .inputBox.w100, .w100{
+    width: 100%;
+}
+
+.contactForm .formBox div .inputBox input,
+.other input,
+.contactForm .formBox div .inputBox textarea,
+.members .inputBox input {
+    width: 100% !important;
+    padding: 5px 0;
+    font-size: 14px;
+    resize: none;
+    font-weight: 300;
+    color: #333;
+    border: none;
+    border-bottom: 1px solid #777;
+    outline: none;
+}
+
+.contactForm .formBox div .inputBox textarea{
+    min-height: 120px;
+}
+
+.contactForm .formBox div .inputBox span,
+.other span,
+.members .inputBox span{
+    position: absolute;
+    left: 0;
+    font-size: 14px;
+    font-weight: 300;
+    color: #333;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.contactForm .formBox div .inputBox input:focus ~ span,
+.other input:focus ~ span,
+.members .inputBox input:focus ~ span,
+.contactForm .formBox div .inputBox textarea:focus ~ span,
+.contactForm .formBox div .inputBox input:valid ~ span,
+.members .inputBox input:valid ~ span,
+.other input:valid ~ span,
+.contactForm .formBox div .inputBox textarea:valid ~ span{
+    transform: translateY(-20px);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #0d7eb3;
+}
+
+.group-interests, .members {
+    overflow: hidden;
+}
+
+.group-interests h5, .members h5 {
+    font-size: 16px;
+}
+.group-interests div.d-flex.row, .members div.d-flex.row {
+    margin: 0;
+}
+
+.group-interests div div.tags,
+.members div div.tags {
+    width: max-content;
+    padding: 7px 20px;
+    border-radius: 19px;
+    color: black;
+    background: whitesmoke;
+    background-color: whitesmoke;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.group-interests div div.tags:hover, .members div div.tags {
+    color: #fff!important;
+    background: #03a9f4!important;
+}
+
+.contactForm .formBox .inputBox input[type = "submit"] {
+    position: relative;
+    cursor: pointer;
+    background: #03a9f4;
+    color: #fff;
+    border: none;
+    max-width: 200px;
+    padding: 12px;
+}
+
+div.add-button {
+    position: relative;
+    cursor: pointer;
+    background: #03a9f4;
+    color: #fff;
+    border: none;
+    max-width: 100px;
+    padding: 12px;
+    text-align: center;
+}
+
+.contactForm .formBox .inputBox input[type = "submit"]:hover,
+div.add-button:hover {
+    background: #0d7eb3;
+}
+
 @media (max-width: 900px) {
     .wrapper .navigation {
         display: none;
